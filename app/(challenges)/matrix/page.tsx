@@ -1,9 +1,14 @@
-import React from 'react';
+import MatrixPage from '@/app/components/pages/matrix/MatrixPage';
 
 type Props = {};
 
+export const metadata = {
+  title:
+    'Enter the realm where reality unravels, the key lies in understanding coded streams.',
+};
+
 const Page = (props: Props) => {
-  return <div>Page</div>;
+  return <MatrixPage />;
 };
 
 export default Page;
