@@ -36,11 +36,11 @@ const initialStagesMock: StageState = {
   },
   4: {
     passed: false,
-    url: '/apocalypse',
+    url: '/ephemere',
   },
   5: {
     passed: false,
-    url: '/matrix',
+    url: '/god',
   },
   6: {
     passed: false,

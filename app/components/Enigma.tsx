@@ -15,11 +15,12 @@ import EnigmaLayout from './EnigmaLayout';
 import Image, { StaticImageData } from 'next/image';
 
 type EnigmaProps = {
+  backgroundImage?: StaticImageData;
   image?: StaticImageData;
   phrase: string;
   correctAnswer: string;
   pageNumber: string;
-  nextPage: string;
+  nextPage?: string;
   backgroundColor: string;
 };
 
@@ -30,6 +31,7 @@ const Enigma: FC<EnigmaProps> = ({
   correctAnswer,
   nextPage,
   backgroundColor,
+  backgroundImage: background,
 }) => {
   const [answer, setAnswer] = useState('');
   const [error, setError] = useState(false);
@@ -66,8 +68,11 @@ const Enigma: FC<EnigmaProps> = ({
   };
 
   return (
-    <EnigmaLayout backgroundColor={backgroundColor}>
-      <div className="flex flex-col justify-center items-center gap-4 px-4 md:px-0">
+    <EnigmaLayout
+      backgroundColor={backgroundColor}
+      backgroundImage={background}
+    >
+      <div className="flex flex-col justify-center items-center gap-4 px-4 md:px-0 z-10">
         {error && <span className="text-red-500">Incorrect answer</span>}
         {image && (
           <div className="w-96 h-96">
