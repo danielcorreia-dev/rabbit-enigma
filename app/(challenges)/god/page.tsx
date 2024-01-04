@@ -12,11 +12,11 @@ const Page = () => {
         backgroundImage={galaxy}
         backgroundColor="bg-neutral-600"
         correctAnswer="1618033988"
-        nextPage="home"
-        pageNumber="5"
+        nextPage="triquete"
+        pageNumber="6"
         phrase="Tractatus mathematicus"
       />
-      <span className="mark">%.10f</span>
+      <span className="triquete">%.10f</span>
     </>
   );
 };

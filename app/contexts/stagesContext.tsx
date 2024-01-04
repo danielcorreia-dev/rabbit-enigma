@@ -44,23 +44,23 @@ const initialStagesMock: StageState = {
   },
   6: {
     passed: false,
-    url: '/matrix',
+    url: '/triquete',
   },
   7: {
     passed: false,
-    url: '/matrix',
+    url: '/mirror',
   },
   8: {
     passed: false,
-    url: '/matrix',
+    url: '/humanity',
   },
   9: {
     passed: false,
-    url: '/matrix',
+    url: '/witchcraft',
   },
   10: {
     passed: false,
-    url: '/matrix',
+    url: '/love',
   },
 };
 
