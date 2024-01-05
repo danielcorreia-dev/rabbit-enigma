@@ -1,12 +1,5 @@
 'use client';
-import React, {
-  FC,
-  FormEvent,
-  Suspense,
-  use,
-  useEffect,
-  useState,
-} from 'react';
+import React, { FC, FormEvent, useEffect, useState } from 'react';
 import AnswerInput from './AnswerInput';
 import { useRouter } from 'next/navigation';
 import { useStage } from '../contexts/stagesContext';
@@ -47,7 +40,7 @@ const Enigma: FC<EnigmaProps> = ({
     if (pageNumberCorrect && !stages[+pageNumber - 1].passed) {
       router.push('/');
     }
-  }, [stages]);
+  }, [pageNumber, router, stages]);
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     if (!answer) return;
@@ -72,10 +65,10 @@ const Enigma: FC<EnigmaProps> = ({
       backgroundColor={backgroundColor}
       backgroundImage={background}
     >
-      <div className="flex flex-col justify-center items-center gap-4 px-4 md:px-0 z-10">
+      <div className="z-10 flex flex-col items-center justify-center gap-4 px-4 md:px-0">
         {error && <span className="text-red-500">Incorrect answer</span>}
         {image && (
-          <div className="w-96 h-96">
+          <div className="h-96 w-96">
             <Image src={image} alt="enigma-image" />
           </div>
         )}
@@ -87,7 +80,7 @@ const Enigma: FC<EnigmaProps> = ({
         />
         {lastStage.lastStageName !== pageNumber && (
           <Link
-            className={`bg-neutral-800 text-xs text-white px-4 py-2 rounded-md hover:bg-neutral-700 transition-colors duration-200 ease-in-out`}
+            className={`rounded-md bg-neutral-800 px-4 py-2 text-xs text-white transition-colors duration-200 ease-in-out hover:bg-neutral-700`}
             href={lastStage.lastStageUrl}
           >
             Go to the last enigma you solved
