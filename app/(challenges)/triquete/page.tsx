@@ -1,4 +1,5 @@
 import Enigma from '@/app/components/Enigma';
+import ReactComment from '@/app/components/ReactComment';
 import React from 'react';
 
 type Props = {};
@@ -10,6 +11,7 @@ export const metadata = {
 const Page = (props: Props) => {
   return (
     <>
+      <ReactComment text={'DD'} />
       <Enigma
         backgroundColor="bg-green-500"
         correctAnswer="27/06/2020"
@@ -17,9 +19,11 @@ const Page = (props: Props) => {
         phrase="the end"
         nextPage="mirror"
       />
+      <ReactComment text={'MM'} />
       <span className="1921 alchemy absolute left-auto text-transparent">
         Moos Krenn
       </span>
+      <ReactComment text={'YY'} />
     </>
   );
 };
