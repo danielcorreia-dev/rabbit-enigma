@@ -1,9 +1,22 @@
-import React from 'react';
+import Enigma from '@/app/components/Enigma';
+import OracleImage from '@/public/oracle.jpeg';
 
-type Props = {};
+export const metadata = {
+  title:
+    'Enter the realm where reality unravels, the key lies in understanding coded streams.',
+};
 
-const Page = (props: Props) => {
-  return <div>Page</div>;
+const Page = () => {
+  return (
+    <Enigma
+      image={OracleImage}
+      pageNumber="2"
+      correctAnswer="path"
+      nextPage="cesar"
+      phrase="Knowing != Walking"
+      backgroundColor="bg-neutral-850"
+    />
+  );
 };
 
 export default Page;
