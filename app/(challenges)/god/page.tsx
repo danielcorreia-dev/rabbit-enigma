@@ -16,7 +16,7 @@ const Page = () => {
         pageNumber="5"
         phrase="Tractatus mathematicus"
       />
-      <span className="triquete">%.10f</span>
+      <span className="gold">%.10f</span>
     </>
   );
 };
