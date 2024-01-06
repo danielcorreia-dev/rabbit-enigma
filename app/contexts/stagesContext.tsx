@@ -14,7 +14,7 @@ const TOGGLE_STAGE = 'TOGGLE_STAGE';
 interface StageContextValue {
   stages: StageState;
   toggleStage: (stage: string) => void;
-  useLastStage: () => { lastStageName: string; lastStageUrl: string };
+  useLastStage: () => { lastStageName: string; lastStageUrl: string } | null;
 }
 
 const StageContext = createContext<StageContextValue | undefined>(undefined);
@@ -104,7 +104,7 @@ export const StageProvider = ({ children }: { children: ReactNode }) => {
     const [lastStage, setLastStage] = useState<{
       lastStageName: string;
       lastStageUrl: string;
-    }>({ lastStageName: '', lastStageUrl: '' });
+    } | null>(null);
 
     useEffect(() => {
       const stages = Object.entries(state);

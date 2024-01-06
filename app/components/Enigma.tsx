@@ -28,18 +28,10 @@ const Enigma: FC<EnigmaProps> = ({
 }) => {
   const [answer, setAnswer] = useState('');
   const [error, setError] = useState(false);
-  const [lastStageButton, setLastStageButton] = useState({
-    lastStageName: '',
-    lastStageUrl: '',
-  });
+  const [showLastStage, setShowLastStage] = useState(false);
   const { stages, toggleStage, useLastStage } = useStage();
 
   const lastStage = useLastStage();
-  useEffect(() => {
-    if (lastStage && lastStage.lastStageName !== pageNumber) {
-      setLastStageButton(lastStage);
-    }
-  }, [lastStage, pageNumber]);
 
   const router = useRouter();
 
@@ -69,6 +61,15 @@ const Enigma: FC<EnigmaProps> = ({
     setError(false);
   };
 
+  useEffect(() => {
+    if (lastStage?.lastStageName !== pageNumber) {
+      console.log(lastStage?.lastStageName, pageNumber);
+      setShowLastStage(true);
+    } else {
+      setShowLastStage(false);
+    }
+  }, [lastStage, pageNumber]);
+
   return (
     <EnigmaLayout
       backgroundColor={backgroundColor}
@@ -87,10 +88,10 @@ const Enigma: FC<EnigmaProps> = ({
           onChange={(answer) => handleChange(answer)}
           onSubmit={handleSubmit}
         />
-        {lastStageButton && (
+        {showLastStage && (
           <Link
             className={`rounded-md bg-neutral-800 px-4 py-2 text-xs text-white transition-colors duration-200 ease-in-out hover:bg-neutral-700`}
-            href={lastStage.lastStageUrl}
+            href={lastStage?.lastStageUrl ?? ''}
           >
             Go to the last enigma you solved
           </Link>
