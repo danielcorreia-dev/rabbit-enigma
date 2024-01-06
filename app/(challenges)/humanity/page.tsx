@@ -11,7 +11,7 @@ const Page = (props: Props) => {
         backgroundColor="bg-black"
         correctAnswer="izabelle"
         phrase="in your deepest feelings"
-        pageNumber="8"
+        pageNumber="9"
         nextPage="witchcraft"
       />
       <ReactComment text="dGhlIG9uZSB0aGF0IHlvdSBsb3ZlIHRoZSBtb3N0" />

@@ -52,11 +52,11 @@ const initialStagesMock: StageState = {
   },
   8: {
     passed: false,
-    url: '/humanity',
+    url: '/witchcraft',
   },
   9: {
     passed: false,
-    url: '/witchcraft',
+    url: '/humanity',
   },
   10: {
     passed: false,
