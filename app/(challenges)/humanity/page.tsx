@@ -1,3 +1,4 @@
+import Enigma from '@/app/components/Enigma';
 import ReactComment from '@/app/components/ReactComment';
 import React from 'react';
 
@@ -5,9 +6,15 @@ type Props = {};
 
 const Page = (props: Props) => {
   return (
-    <div>
-      <ReactComment text="save the humans" />
-    </div>
+    <>
+      <Enigma
+        backgroundColor="bg-black"
+        correctAnswer="izabelle"
+        phrase="in your deepest feelings"
+        pageNumber="8"
+      />
+      <ReactComment text="dGhlIG9uZSB0aGF0IHlvdSBsb3ZlIHRoZSBtb3N0" />
+    </>
   );
 };
 

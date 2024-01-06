@@ -60,7 +60,7 @@ const initialStagesMock: StageState = {
   },
   10: {
     passed: false,
-    url: '/love',
+    url: '/truth',
   },
 };
 
