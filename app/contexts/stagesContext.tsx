@@ -68,7 +68,7 @@ export const StageProvider = ({ children }: { children: ReactNode }) => {
   const [initialStages, setInitialStages] = useState<StageState>(() => {
     Object.keys(initialStagesMock).forEach((stage) => {
       if (stage) {
-        const encryptedStage = encryptData(stage);
+        const encryptedStage = encryptData(stage).replace('=', '');
 
         if (getCookie(encryptedStage)) {
           initialStagesMock[stage].passed = true;
