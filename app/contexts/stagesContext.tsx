@@ -8,8 +8,8 @@ import React, {
   useReducer,
   useEffect,
 } from 'react';
-
 const TOGGLE_STAGE = 'TOGGLE_STAGE';
+import { decryptData, encryptData } from '../utils/encrypt';
 
 interface StageContextValue {
   stages: StageState;
@@ -67,8 +67,12 @@ const initialStagesMock: StageState = {
 export const StageProvider = ({ children }: { children: ReactNode }) => {
   const [initialStages, setInitialStages] = useState<StageState>(() => {
     Object.keys(initialStagesMock).forEach((stage) => {
-      if (getCookie(stage)) {
-        initialStagesMock[stage].passed = true;
+      if (stage) {
+        const encryptedStage = encryptData(stage);
+
+        if (getCookie(encryptedStage)) {
+          initialStagesMock[stage].passed = true;
+        }
       }
     });
 
@@ -81,7 +85,9 @@ export const StageProvider = ({ children }: { children: ReactNode }) => {
   ): StageState => {
     switch (action.type) {
       case TOGGLE_STAGE:
-        setCookie(action.stage, 'true');
+        const encryptedStage = encryptData(action.stage);
+        setCookie(encryptedStage, 'true');
+
         return {
           ...state,
           [action.stage]: {
