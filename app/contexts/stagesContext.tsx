@@ -112,7 +112,14 @@ export const StageProvider = ({ children }: { children: ReactNode }) => {
         return stage[1].passed === false;
       });
 
-      if (!passedStage) return;
+      if (!passedStage) {
+        setLastStage({
+          lastStageName: 'end',
+          lastStageUrl: '/end',
+        });
+
+        return;
+      }
 
       const lastStageName = passedStage[0];
       const lastStageUrl = passedStage[1].url;

@@ -8,7 +8,7 @@ const Page = () => {
   return (
     <Enigma
       pageNumber="7"
-      nextPage="humanity"
+      nextPage="witchcraft"
       backgroundColor="bg-neutral-500"
       phrase="start - 7-tuple - CN−26.018 - pardon"
       correctAnswer="turing"
