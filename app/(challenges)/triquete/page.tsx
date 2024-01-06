@@ -17,7 +17,7 @@ const Page = (props: Props) => {
         phrase="the end"
         nextPage="mirror"
       />
-      <span className="text-transparent absolute left-auto 1921 alchemy">
+      <span className="1921 alchemy absolute left-auto text-transparent">
         Moos Krenn
       </span>
     </>

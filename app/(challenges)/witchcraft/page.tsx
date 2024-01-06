@@ -12,7 +12,7 @@ const Page = () => {
         correctAnswer="galileo galilei"
         pageNumber="8"
         phrase="Malleus Maleficarum"
-        nextPage="truth"
+        nextPage="humanity"
       />
     </>
   );

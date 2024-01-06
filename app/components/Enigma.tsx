@@ -62,7 +62,7 @@ const Enigma: FC<EnigmaProps> = ({
   };
 
   useEffect(() => {
-    if (lastStage?.lastStageName !== pageNumber) {
+    if (lastStage && lastStage?.lastStageName !== pageNumber) {
       setShowLastStage(true);
     } else {
       setShowLastStage(false);

@@ -12,7 +12,7 @@ const Page = (props: Props) => {
         correctAnswer="izabelle"
         phrase="in your deepest feelings"
         pageNumber="9"
-        nextPage="witchcraft"
+        nextPage="truth"
       />
       <ReactComment text="dGhlIG9uZSB0aGF0IHlvdSBsb3ZlIHRoZSBtb3N0" />
     </>
