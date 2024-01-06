@@ -8,11 +8,11 @@ const Page = () => {
   return (
     <>
       <Enigma
-        backgroundColor="bg-neutral-100"
+        backgroundColor="bg-orange-900"
         correctAnswer="galileo galilei"
-        pageNumber="9"
+        pageNumber="8"
         phrase="Malleus Maleficarum"
-        nextPage="love"
+        nextPage="truth"
       />
     </>
   );
