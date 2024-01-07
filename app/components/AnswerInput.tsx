@@ -2,19 +2,25 @@
 
 import React, { FC, FormEvent } from 'react';
 
-type AnswerInputProps = {
+export type AnswerInputProps = {
+  textColor?: string;
   answer: string;
   onChange: (answer: string) => void;
   onSubmit: (evnet: FormEvent<HTMLFormElement>) => void;
 };
 
-const AnswerInput: FC<AnswerInputProps> = ({ answer, onChange, onSubmit }) => {
+const AnswerInput: FC<AnswerInputProps> = ({
+  answer,
+  onChange,
+  onSubmit,
+  textColor,
+}) => {
   return (
-    <div className="flex flex-col justify-center w-full">
+    <div className="flex w-full flex-col justify-center">
       <form onSubmit={onSubmit} autoComplete="off">
         <div className="flex flex-col items-center justify-center gap-4">
           <input
-            className="text-center bg-transparent border-b border-white focus:outline-none w-3/4"
+            className={`w-3/4 border-b border-white bg-transparent text-center focus:outline-none ${textColor}`}
             type="text"
             placeholder="keyword"
             value={answer}
@@ -23,8 +29,8 @@ const AnswerInput: FC<AnswerInputProps> = ({ answer, onChange, onSubmit }) => {
           <button
             title="answer-submit"
             disabled={answer.length === 0}
-            className={`px-2 py-1 bg-white rounded-md text-neutral-950 mt-4 hover:bg-neutral-900 hover:text-white transition-all duration-300 ${
-              answer.length === 0 && 'opacity-0 cursor-default'
+            className={`mt-4 rounded-md bg-white px-2 py-1 text-neutral-950 transition-all duration-300 hover:bg-neutral-900 hover:text-white ${
+              answer.length === 0 && 'cursor-default opacity-0'
             }`}
             type="submit"
           >
