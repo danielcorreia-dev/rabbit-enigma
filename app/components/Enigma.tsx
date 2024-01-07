@@ -11,7 +11,7 @@ type EnigmaProps = {
   backgroundImage?: StaticImageData;
   image?: StaticImageData;
   phrase: string;
-  correctAnswer: string;
+  correctAnswer: string | string[];
   pageNumber: string;
   nextPage?: string;
   backgroundColor: string;
@@ -52,6 +52,18 @@ const Enigma: FC<EnigmaPropsWithInput> = ({
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     if (!answer) return;
     e.preventDefault();
+
+    if (Array.isArray(correctAnswer)) {
+      const answerArray = correctAnswer.map((answer) => answer.toLowerCase());
+      if (answerArray.includes(answer.toLowerCase())) {
+        toggleStage(pageNumber);
+        router.push(`/${nextPage}`);
+      } else {
+        setAnswer('');
+        setError(true);
+      }
+      return;
+    }
 
     if (answer.toLowerCase() === correctAnswer.toLowerCase()) {
       toggleStage(pageNumber);
