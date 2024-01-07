@@ -10,7 +10,7 @@ const Page = (props: Props) => {
       <Link
         href="https://open.spotify.com/track/6E8wXOsqSNl1xsfs6PxasX?si=2fd5297be53a429b"
         replace
-        className="text-black transition-colors hover:text-red-500"
+        className="text-black transition-colors duration-300 hover:text-red-500"
       >
         <div>you finally figured it out, my love</div>
       </Link>
