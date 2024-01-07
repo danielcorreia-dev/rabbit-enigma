@@ -1,10 +1,11 @@
 import Enigma from '@/app/components/Enigma';
 import ReactComment from '@/app/components/ReactComment';
-import React from 'react';
 
-type Props = {};
+export const metadata = {
+  title: '64',
+};
 
-const Page = (props: Props) => {
+const HumanityPage = () => {
   return (
     <>
       <Enigma
@@ -19,4 +20,4 @@ const Page = (props: Props) => {
   );
 };
 
-export default Page;
+export default HumanityPage;
