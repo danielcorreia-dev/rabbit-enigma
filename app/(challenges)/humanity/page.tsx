@@ -10,7 +10,7 @@ const HumanityPage = () => {
     <>
       <Enigma
         backgroundColor="bg-black"
-        correctAnswer="izabelle"
+        correctAnswer={['izabelle', 'myself']}
         phrase="in your deepest feelings"
         pageNumber="9"
         nextPage="truth"
