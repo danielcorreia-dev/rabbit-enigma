@@ -1,4 +1,5 @@
 import Enigma from '@/app/components/Enigma';
+import { encryptData } from '@/app/utils/encrypt';
 
 export const metadata = {
   title: 'g - celestial injustice - g',
@@ -13,7 +14,7 @@ const Page = () => {
       </span>
       <Enigma
         backgroundColor="bg-orange-600"
-        correctAnswer="galileo galilei"
+        correctAnswer={encryptData('galileo galilei')}
         pageNumber="8"
         phrase="Malleus Maleficarum"
         nextPage="humanity"

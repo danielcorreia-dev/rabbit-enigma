@@ -1,4 +1,5 @@
 import Enigma from '@/app/components/Enigma';
+import { encryptData } from '@/app/utils/encrypt';
 import OracleImage from '@/public/oracle.jpeg';
 
 export const metadata = {
@@ -11,7 +12,7 @@ const Page = () => {
     <Enigma
       image={OracleImage}
       pageNumber="2"
-      correctAnswer="path"
+      correctAnswer={encryptData('path')}
       nextPage="cesar"
       phrase="Knowing != Walking"
       backgroundColor="bg-neutral-850"
