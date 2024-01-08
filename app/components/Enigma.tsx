@@ -6,6 +6,7 @@ import { useStage } from '../contexts/stagesContext';
 import Link from 'next/link';
 import EnigmaLayout from './EnigmaLayout';
 import Image, { StaticImageData } from 'next/image';
+import { decryptData } from '../utils/encrypt';
 
 type EnigmaProps = {
   backgroundImage?: StaticImageData;
@@ -54,7 +55,9 @@ const Enigma: FC<EnigmaPropsWithInput> = ({
     e.preventDefault();
 
     if (Array.isArray(correctAnswer)) {
-      const answerArray = correctAnswer.map((answer) => answer.toLowerCase());
+      const answerArray = correctAnswer.map((answer) =>
+        decryptData(answer).toLowerCase().trim()
+      );
       if (answerArray.includes(answer.toLowerCase())) {
         toggleStage(pageNumber);
         router.push(`/${nextPage}`);
@@ -65,7 +68,9 @@ const Enigma: FC<EnigmaPropsWithInput> = ({
       return;
     }
 
-    if (answer.toLowerCase() === correctAnswer.toLowerCase()) {
+    if (
+      answer.toLowerCase() === decryptData(correctAnswer).toLowerCase().trim()
+    ) {
       toggleStage(pageNumber);
       router.push(`/${nextPage}`);
     } else {
