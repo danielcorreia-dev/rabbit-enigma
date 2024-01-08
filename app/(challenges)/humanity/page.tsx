@@ -1,5 +1,6 @@
 import Enigma from '@/app/components/Enigma';
 import ReactComment from '@/app/components/ReactComment';
+import { encryptData } from '@/app/utils/encrypt';
 
 export const metadata = {
   title: '64',
@@ -10,7 +11,7 @@ const HumanityPage = () => {
     <>
       <Enigma
         backgroundColor="bg-black"
-        correctAnswer={['izabelle', 'myself']}
+        correctAnswer={[encryptData('izabelle'), encryptData('myself')]}
         phrase="in your deepest feelings"
         pageNumber="9"
         nextPage="truth"

@@ -1,5 +1,6 @@
 import Enigma from '@/app/components/Enigma';
 import ReactComment from '@/app/components/ReactComment';
+import { encryptData } from '@/app/utils/encrypt';
 import React from 'react';
 
 type Props = {};
@@ -14,7 +15,7 @@ const Page = (props: Props) => {
       <ReactComment text={'DD'} />
       <Enigma
         backgroundColor="bg-green-500"
-        correctAnswer="27/06/2020"
+        correctAnswer={encryptData('27/06/2020')}
         pageNumber="6"
         phrase="the end"
         nextPage="mirror"
