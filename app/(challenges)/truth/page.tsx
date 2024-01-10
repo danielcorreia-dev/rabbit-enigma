@@ -9,8 +9,6 @@ export const metadata = {
 };
 
 const Page = () => {
-  redirect('/journey');
-
   return (
     <>
       <Enigma
