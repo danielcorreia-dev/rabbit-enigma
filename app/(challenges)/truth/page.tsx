@@ -1,11 +1,14 @@
 import Enigma from '@/app/components/Enigma';
 import ReactComment from '@/app/components/ReactComment';
 import { encryptData } from '@/app/utils/encrypt';
+import { redirect } from 'next/navigation';
 
 export const metadata = {
   title: 'meaning',
   description: '42.1959° N, 70.7259° W',
 };
+
+redirect('/');
 
 const Page = () => {
   return (
