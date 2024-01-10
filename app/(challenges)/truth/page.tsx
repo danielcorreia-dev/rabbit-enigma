@@ -8,7 +8,7 @@ export const metadata = {
   description: '42.1959° N, 70.7259° W',
 };
 
-redirect('/');
+redirect('/journey');
 
 const Page = () => {
   return (
